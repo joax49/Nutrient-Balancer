@@ -11,16 +11,21 @@ export function addBox() {
 
     for (let n = 0; n < allFoods.length; n++) {
         let option = document.createElement('option');
-        option.value = allFoods[n].foodName;
+        option.value = n;
         option.textContent = allFoods[n].foodName;
         foodSelector.appendChild(option);
     }
 
-    let foodQuantiyInput = document.createElement('form');
+    let foodQuantiyInput = document.createElement('input');
+
     let calorieContentDisplay = document.createElement('div');
+    calorieContentDisplay.classList.add("calorie-display");
     let carbContentDisplay = document.createElement('div');
+    carbContentDisplay.classList.add("carb-display");
     let proteinContentDisplay = document.createElement('div');
+    proteinContentDisplay.classList.add("prot-display");
     let fatContentDisplay = document.createElement('div');
+    fatContentDisplay.classList.add("fat-display");
 
     //Creating the div that will store the elements
     let div = document.createElement("div");
