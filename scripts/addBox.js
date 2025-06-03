@@ -16,7 +16,14 @@ export function addBox() {
         foodSelector.appendChild(option);
     }
 
+    foodSelector.addEventListener("select",()=>console.log("hola"));
+
     let foodQuantiyInput = document.createElement('input');
+    foodQuantiyInput.type = 'number';
+    foodQuantiyInput.required = true;
+
+    let submit = document.createElement('input');
+    submit.type = 'submit';
 
     let calorieContentDisplay = document.createElement('div');
     calorieContentDisplay.classList.add("calorie-display");
@@ -27,12 +34,27 @@ export function addBox() {
     let fatContentDisplay = document.createElement('div');
     fatContentDisplay.classList.add("fat-display");
 
+    let form = document.createElement('form');
+    form.appendChild(foodSelector);
+    form.appendChild(foodQuantiyInput);
+    form.appendChild(submit);
+
+    form.addEventListener("submit",event=>{
+        event.preventDefault(false);
+        let selectedFood = foodSelector.value;
+        let foodQuantity = foodQuantiyInput.value;
+
+        calorieContentDisplay.innerHTML = (allFoods[selectedFood].calories * foodQuantity) / 100;
+        carbContentDisplay.innerHTML = (allFoods[selectedFood].carbohidrates * foodQuantity) / 100;
+        proteinContentDisplay.innerHTML = (allFoods[selectedFood].protein * foodQuantity) / 100;
+        fatContentDisplay.innerHTML = (allFoods[selectedFood].fat * foodQuantity) / 100;
+    });
+
     //Creating the div that will store the elements
     let div = document.createElement("div");
     div.classList.add("food-box");
 
-    div.appendChild(foodSelector);
-    div.appendChild(foodQuantiyInput);
+    div.appendChild(form);
     div.appendChild(calorieContentDisplay);
     div.appendChild(carbContentDisplay);
     div.appendChild(proteinContentDisplay);
