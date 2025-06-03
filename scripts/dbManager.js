@@ -10,7 +10,7 @@ const getIDBData = ()=>{
     return [IDBtransaction, objStore]
 }
 
-const addFood = food => {
+export const addFood = food => {
     const db = getIDBData();
 
     db[1].add(food);
