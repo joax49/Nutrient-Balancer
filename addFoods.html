@@ -4,14 +4,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="addFoodStyles.css">
     </head>
     <body>
+        <div id="nav">
+            <ul id="nav__ul">
+                <li class="nav__item"><a href="index.html" class="nav__link">Link 1</a></li>
+                <li class="nav__item"><a href="" class="nav__link">Link 2</a></li>
+                <li class="nav__item"><a href="" class="nav__link">Link 3</a></li>
+                <li class="nav__item"><a href="" class="nav__link">Link 4</a></li>
+            </ul>
+        </div>
         <div id="form-container">
             <form id="food-adding">
+                <label for="food-name">Input the name of the food:</label>
                 <input id="food-name" type="text" required>
+                <label for="calories">Input the calories:</label>
                 <input id="calories" type="number" required>
+                <label for="carbs">Input the carbohidrates:</label>
                 <input id="carbs" type="number" required>
+                <label for="protein">Input the protein:</label>
                 <input id="protein" type="number" required>
+                <label for="fat">Input the fat:</label>
                 <input id="fat" type="number" required>
                 <input type="submit">
             </form>

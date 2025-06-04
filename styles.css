@@ -2,6 +2,23 @@ body {
     margin: 0;
 }
 
+.nav__ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
+    color: #518B63;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+}
+
 #container {
     margin: 20px auto;
     min-height: 400px;
