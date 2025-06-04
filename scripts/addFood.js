@@ -4,22 +4,28 @@ import { addFood } from "./dbManager.js";
 
 const form = document.getElementById("food-adding");
 
-form.addEventListener("select", ()=>{
-    // let foodNameValue = document.getElementById("food-name").innerHTML;
-    // let caloriesValue = document.getElementById("calories").innerHTML;
-    // let  = document.getElementById("food-name").innerHTML;
-    // let foodNameValue = document.getElementById("food-name").innerHTML;
-    // let foodNameValue = document.getElementById("food-name").innerHTML;
+form.addEventListener("submit", event=>{
+    event.preventDefault(false);
+    const foodNameElement = document.getElementById("food-name");
+    const carbsElement = document.getElementById("carbs");
+    const proteinElement = document.getElementById("protein");
+    const fatElement = document.getElementById("fat")
 
-    food = {
-        foodName : document.getElementById("foodName").innerHTML,
-        calories : document.getElementById("calories").innerHTML,
-        carbohidrates : document.getElementById("carbohidrates").innerHTML,
-        protein : document.getElementById("protein").innerHTML,
-        fat : document.getElementById("fat")
+
+    let food = {
+        foodName : foodNameElement.value,
+        calories : (carbsElement.value * 4 + proteinElement.value * 4 + fatElement.value * 9),
+        carbohidrates : carbsElement.value,
+        protein : proteinElement.value,
+        fat : fatElement.value
     }
 
-    food = [food, foodName];
-
     addFood(food);
+
+    foodNameElement.value = "";
+    carbsElement.value = "";
+    proteinElement.value = "";
+    fatElement.value = "";
+
+    console.log("Food added successfully");
 })

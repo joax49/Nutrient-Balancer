@@ -2,9 +2,14 @@ body {
     margin: 0;
 }
 
-.nav__ul {
+#nav {
+    margin-bottom: 20px;
+}
+
+#nav__ul {
     margin: 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -14,7 +19,6 @@ body {
 
 .nav__link {
     color: #518B63;
-    display: inline-block;
     text-decoration: none;
     padding: 10px;
 }
