@@ -2,6 +2,8 @@ body {
     margin: 0;
 }
 
+/*NAVIGATION BAR*/
+
 #nav {
     margin-bottom: 20px;
 }
@@ -23,7 +25,24 @@ body {
     padding: 10px;
 }
 
-#container {
+/*NUTRITIONAL DISPLAY*/
+
+#full-nutrient-display {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin: auto;
+}
+
+#full-nutrient-display div {
+    flex-grow: 1;
+    background-color: #518B63;
+    border: #49613E;
+}
+
+/*FOOD MANAGING*/
+
+#food-managing {
     margin: 20px auto;
     min-height: 400px;
     width: 80%;
