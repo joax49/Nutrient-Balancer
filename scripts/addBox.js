@@ -8,12 +8,31 @@ const fullProteinDisplay = document.getElementById("full-protein-display");
 const fullFatDisplay = document.getElementById("full-fat-display");
 
 //An object that will contain the total calories, carbs, proteins and fat of the food
-let meal = {
-    calories : 0,
-    carbs : 0,
-    protein : 0,
-    fat : 0
+class Meal {
+    constructor() {
+        this.calories = 0;
+        this.carbs = 0;
+        this.protein = 0;
+        this.fat = 0;
+
+        this.storedFoods = [];
+    }
+
+    set newFood(food) {
+        if(this.storedFoods.includes(food[0])) {
+            return Error("This food is already selected");
+        }
+        else {
+            this.storedFoods.push(food[0]);
+            this.calories += food[1];
+            this.carbs += food[2];
+            this.protein += food[3];
+            this.fat += food[4];
+        }
+    }
 }
+
+const WholeMeal = new Meal();
 
 //A function that will add a div that will contain the information of a selected food
 export function addBox() {
@@ -57,20 +76,23 @@ export function addBox() {
         let selectedFood = foodSelector.value;
         let foodQuantity = foodQuantiyInput.value;
 
-        calorieContentDisplay.innerHTML = (allFoods[selectedFood].calories * foodQuantity) / 100;
-        carbContentDisplay.innerHTML = (allFoods[selectedFood].carbohidrates * foodQuantity) / 100;
-        proteinContentDisplay.innerHTML = (allFoods[selectedFood].protein * foodQuantity) / 100;
-        fatContentDisplay.innerHTML = (allFoods[selectedFood].fat * foodQuantity) / 100;
+        let calculatedCalories = Math.round((allFoods[selectedFood].calories * foodQuantity) / 100);
+        let calculatedCarbs = Math.round(allFoods[selectedFood].carbohidrates * foodQuantity) / 100;
+        let calculatedProtein = Math.round((allFoods[selectedFood].protein * foodQuantity) / 100);
+        let calculatedFat = Math.round((allFoods[selectedFood].fat * foodQuantity) / 100)
 
-        meal.calories += Math.round((allFoods[selectedFood].calories * foodQuantity) / 100);
-        meal.carbs += Math.round(allFoods[selectedFood].carbohidrates * foodQuantity) / 100;
-        meal.protein += Math.round((allFoods[selectedFood].protein * foodQuantity) / 100);
-        meal.fat += Math.round((allFoods[selectedFood].fat * foodQuantity) / 100);
+        calorieContentDisplay.innerHTML = calculatedCalories;
+        carbContentDisplay.innerHTML = calculatedCarbs;
+        proteinContentDisplay.innerHTML = calculatedProtein;
+        fatContentDisplay.innerHTML = calculatedFat;
+
+        WholeMeal.newFood = [selectedFood,calculatedCalories,calculatedCarbs,calculatedProtein,calculatedFat];
         
-        fullCalorieDisplay.innerHTML = "Total calories: "+meal.calories;
-        fullCarbDisplay.innerHTML = meal.carbs;
-        fullProteinDisplay.innerHTML= meal.protein;
-        fullFatDisplay.innerHTML = meal.fat;
+        fullCalorieDisplay.innerHTML = "Total calories: "+WholeMeal.calories;
+        fullCarbDisplay.innerHTML = WholeMeal.carbs;
+        fullProteinDisplay.innerHTML= WholeMeal.protein;
+        fullFatDisplay.innerHTML = WholeMeal.fat;
+        
     });
 
     //Creating the div that will store the elements
