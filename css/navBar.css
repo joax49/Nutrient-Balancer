@@ -1,0 +1,28 @@
+/*NAVIGATION BAR*/
+
+#nav {
+    background-color: #1AAC57;
+    margin-bottom: 20px;
+    box-shadow: 0 0 8px 0 #1AAC57;
+}
+
+#nav__ul {
+    margin: 0;
+    display: flex;
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav__item:hover {
+    background-color: #1EC564;
+}

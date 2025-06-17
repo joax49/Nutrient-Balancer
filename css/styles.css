@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+/*NUTRITIONAL DISPLAY*/
+
+#display-container {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#full-caloric-display-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: auto;
+    background-color: #1AAC57;
+    border-radius: 4px;
+}
+
+#full-nutrient-display {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    margin: auto;
+}
+
+#full-nutrient-display div {
+    flex-grow: 1;
+    background-color: #1AAC57;
+    border-radius: 4px;
+}
+
+/*FOOD MANAGING*/
+
+#food-managing {
+    margin: 20px auto;
+    min-height: 400px;
+    width: 80%;
+    display: grid;
+    background-color: #1AAC57;
+    box-shadow: 0 0 20px 3px #1AAC57;
+    grid-template-columns: repeat(auto-fill, 120px);
+    grid-auto-rows: 200px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.food-box {
+    background-color: #1AAC57;
+}
+
+.food-box:hover {
+    background-color: #1EC564;
+}
+
+#food-adder-btn {
+    background-color: #1AAC57;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#food-adder-btn:hover {
+    background-color: #1EC564;
+}

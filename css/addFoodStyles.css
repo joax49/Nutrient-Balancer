@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div, #nav__ul, form, label {
+    box-sizing: border-box;
+}
+
+/*Food-adding section layout*/
+
+#form-container {
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #1AAC57;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 #1AAC57;
+}
+
+#food-adding {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    width: 90%;
+}
