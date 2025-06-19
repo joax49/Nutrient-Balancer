@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    padding: 0;
+    font-family: sans-serif;
+    background-color: #ddd;
 }
 
 div, #nav__ul, form, label {
@@ -16,7 +17,7 @@ div, #nav__ul, form, label {
     background-color: #1AAC57;
     padding: 30px;
     border-radius: 4px;
-    box-shadow: 0 0 8px 0 #1AAC57;
+    box-shadow: 0 0 20px 3px #1AAC57;
 }
 
 #food-adding {

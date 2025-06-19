@@ -1,44 +1,54 @@
 body {
     margin: 0;
+    font-family: sans-serif;
+    background-color: #ddd;
 }
 
 /*NUTRITIONAL DISPLAY*/
 
 #display-container {
     margin: auto;
+    margin-bottom: 40px;
     width: 80%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-flow: row;
     padding: 10px;
+    background-color: #1AAC57;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 3px #1AAC57;
 }
 
 #full-caloric-display-container {
     width: 100%;
     height: auto;
-    display: flex;
     margin: auto;
-    background-color: #1AAC57;
+    background-color: #1EC564;
     border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    box-sizing: border-box;
 }
 
 #full-nutrient-display {
     width: 100%;
-    height: 200px;
-    display: flex;
-    margin: auto;
+    height: 120px;
+    display: grid;
+    grid-auto-flow: column;
+    margin: 10px auto;
+    gap: 10px;
 }
 
 #full-nutrient-display div {
-    flex-grow: 1;
-    background-color: #1AAC57;
+    background-color: #1EC564;
     border-radius: 4px;
+    text-align: center;
 }
 
 /*FOOD MANAGING*/
 
 #food-managing {
-    margin: 20px auto;
-    min-height: 400px;
+    margin: 40px auto;
     width: 80%;
     display: grid;
     background-color: #1AAC57;
@@ -47,6 +57,7 @@ body {
     grid-auto-rows: 200px;
     padding: 20px;
     gap: 20px;
+    border-radius: 10px;
 }
 
 .food-box {
