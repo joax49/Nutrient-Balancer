@@ -1,0 +1,39 @@
+{
+    "foods" : [
+        {
+            "foodName" : "White rice",
+            "calories" : 365,
+            "carbohidrates" : 80,
+            "protein" : 7.1,
+            "fat" : 0.6
+        },
+        {
+            "foodName" : "Oats",
+            "calories" : 375,
+            "carbohidrates" : 70,
+            "protein" : 12.5,
+            "fat" : 6.5
+        },
+        {
+            "foodName" : "Mozzarella cheese",
+            "calories" : 307,
+            "carbohidrates" : 0,
+            "protein" : 24,
+            "fat" : 23
+        },
+        {
+            "foodName" : "Chicken breast",
+            "calories" : 165,
+            "carbohidrates" : 0,
+            "protein" : 31,
+            "fat" : 3.6
+        },
+        {
+            "foodName" : "Whole eggs",
+            "calories" : 144,
+            "carbohidrates" : 0,
+            "protein" : 6,
+            "fat" : 5
+        }
+    ]
+}

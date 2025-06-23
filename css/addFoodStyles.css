@@ -28,3 +28,21 @@ div, #nav__ul, form, label {
 label {
     width: 90%;
 }
+
+/*BUTTON*/
+
+button {
+    width: 200px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    background-color: #1AAC57;
+    box-shadow: 0 0 20px 3px #1AAC57;
+    border: none;
+}
+
+button:hover {
+    background-color: #1EC564;
+    box-shadow: 0 0 20px 3px #1EC564;
+}

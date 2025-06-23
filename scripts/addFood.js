@@ -1,8 +1,10 @@
 "use strict";
 
 import { addFood } from "./dbManager.js";
+import {extractingJSONData} from "./baseFoodsReader.js"
 
 const form = document.getElementById("food-adding");
+const button = document.querySelector("button");
 
 form.addEventListener("submit", event=>{
     event.preventDefault(false);
@@ -29,3 +31,5 @@ form.addEventListener("submit", event=>{
 
     console.log("Food added successfully");
 })
+
+button.addEventListener("click", () => extractingJSONData())

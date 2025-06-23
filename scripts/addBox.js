@@ -10,25 +10,41 @@ const fullFatDisplay = document.getElementById("full-fat-display");
 //An object that will contain the total calories, carbs, proteins and fat of the food
 class Meal {
     constructor() {
-        this.calories = 0;
-        this.carbs = 0;
-        this.protein = 0;
-        this.fat = 0;
+        this._calories = 0;
+        this._carbs = 0;
+        this._protein = 0;
+        this._fat = 0;
 
-        this.storedFoods = [];
+        this._storedFoods = [];
     }
 
     set newFood(food) {
-        if(this.storedFoods.includes(food[0])) {
+        if(this._storedFoods.includes(food[0])) {
             return Error("This food is already selected");
         }
         else {
-            this.storedFoods.push(food[0]);
-            this.calories += food[1];
-            this.carbs += food[2];
-            this.protein += food[3];
-            this.fat += food[4];
+            this._storedFoods.push(food[0]);
+            this._calories += food[1];
+            this._carbs += food[2];
+            this._protein += food[3];
+            this._fat += food[4];
         }
+    }
+
+    get calories() {
+        return this._calories
+    }
+
+    get carbs() {
+        return this._carbs
+    }
+
+    get protein() {
+        return this._protein
+    }
+
+    get fat() {
+        return this._fat
     }
 }
 
